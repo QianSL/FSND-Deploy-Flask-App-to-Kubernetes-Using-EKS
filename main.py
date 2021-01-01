@@ -1,3 +1,5 @@
+#!/home/qq/miniconda3/envs/full_stack/bin/python
+
 """
 A simple app to create a JWT token.
 """
@@ -78,8 +80,10 @@ def auth():
     body = {'email': email, 'password': password}
 
     user_data = body
+    # print(user_data)
+    # print(_get_jwt(user_data))
 
-    return jsonify(token=_get_jwt(user_data).decode('utf-8'))
+    return jsonify(token=_get_jwt(user_data))  # .decode('utf-8'))
 
 
 @APP.route('/contents', methods=['GET'])
